@@ -1,0 +1,15 @@
+# Release signing for the Play Store.
+# Copy this file to android/key.properties and fill in real values.
+# android/key.properties is git-ignored and must never be committed.
+#
+# Create an upload keystore once with:
+#   keytool -genkey -v -keystore ~/reef-feast-upload.jks \
+#     -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+#
+# When key.properties is absent the release build falls back to debug
+# signing, so `flutter run --release` still works during development.
+
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=upload
+storeFile=/home/jon/reef-feast-upload.jks

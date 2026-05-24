@@ -1,0 +1,41 @@
+name: reef_feast
+description: "Reef Feast - eat smaller sea creatures, grow bigger and rule the reef"
+publish_to: 'none'
+
+# version: <build-name>+<build-number>
+# build-name -> Android versionName, build-number -> Android versionCode.
+# Bump the build-number on every Play Store upload.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  # Persists the high score between sessions.
+  shared_preferences: ^2.3.0
+  # Plays the generated sound effects.
+  audioplayers: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  # Generates Android launcher icons from a single source image.
+  flutter_launcher_icons: ^0.14.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/
+
+# Run with: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/icon.png"
+  adaptive_icon_background: "#0B2C4A"
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"

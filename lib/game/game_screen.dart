@@ -319,29 +319,35 @@ class _GameScreenState extends State<GameScreen>
               _buildRuleRow(const Color(0xFFFF5A66),
                   'Dodge anything bigger — it bites back'),
               const SizedBox(height: 30),
-              Transform.scale(
-                scale: pulse,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 30, vertical: 14),
-                  decoration: BoxDecoration(
-                    color: _accent,
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0x55000000),
-                        blurRadius: 12,
-                        offset: Offset(0, 4),
+              GestureDetector(
+                onTap: () => setState(() {
+                  _newBest = false;
+                  _world.start();
+                }),
+                child: Transform.scale(
+                  scale: pulse,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 14),
+                    decoration: BoxDecoration(
+                      color: _accent,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0x55000000),
+                          blurRadius: 12,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: const Text(
+                      'TAP TO START',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                        letterSpacing: 1,
                       ),
-                    ],
-                  ),
-                  child: const Text(
-                    'TAP TO START',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white,
-                      letterSpacing: 1,
                     ),
                   ),
                 ),
